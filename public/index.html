@@ -14,13 +14,14 @@
     <h1>ToDo's</h1>
 
     <form v-on:submit.prevent="saveNewItem">
+
       <input id="new-item" type="text" v-model="newItem"/>
-      
-      <input id="priorityChoice1" type="radio" v-model="newItem"
+
+      <input id="priorityChoice1" type="radio" v-model="newItemPriority"
       name="priority" value="lowPriority" required/>
       <label for="priorityChoice1">Low Priority</label>
 
-      <input id="priorityChoice2" type="radio" v-model="newItem"
+      <input id="priorityChoice2" type="radio" v-model="newItemPriority"
       name="priority" value="highPriority" required/>
       <label for="priorityChoice2">High Priority</label>
 
