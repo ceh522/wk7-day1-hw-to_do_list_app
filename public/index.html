@@ -17,19 +17,19 @@
 
       <input id="new-item" type="text" v-model="newItem"/>
 
-      <input id="priorityChoice1" type="radio" v-model="newItemPriority"
-      name="priority" value="lowPriority" required/>
-      <label for="priorityChoice1">Low Priority</label>
+      <input id="newItemPriority" type="radio" v-model="newItemPriority"
+      name="priority" value="not-HighPriority" required/>
+      <label for="newItemPriority">Low Priority</label>
 
-      <input id="priorityChoice2" type="radio" v-model="newItemPriority"
+      <input id="newItemHighPriority" type="radio" v-model="newItemPriority"
       name="priority" value="highPriority" required/>
-      <label for="priorityChoice2">High Priority</label>
+      <label for="newItemPriority">High Priority</label>
 
       <input type="submit" value ="Save Item" />
     </form>
 
     <ul>
-      <li v-for="item in items">
+      <li v-for="(item, index) in items" v bind:class="item.isHighPriority ? 'highPriority':'not-HighPriority'">
         <span>{{ item.toDo }}</span>
       </li>
     </ul>
